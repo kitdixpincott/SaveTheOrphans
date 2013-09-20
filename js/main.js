@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-    $("p").savetheorphans({  
-        orphansToSave: 1
+    $("p").saveTheOrphans({  
+        limit: 3
     }); 
 
 });
