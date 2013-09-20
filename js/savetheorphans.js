@@ -11,6 +11,64 @@
 		// Set Options
 		$.extend(options,_options);
 
+		// Function to be applied to all selected elements
+		function fixOrphans() {
+
+			// Get a jQuery object for the element
+			var $elm = $(this);
+
+			// Get a clone of the original element to store the last state
+			var $_elm = $elm.clone();
+
+			// Get the original width of the element
+			var original_width = $elm.width();
+
+			// Set the count variable for this element
+			var count = options.limit;
+
+			// Set a variable to record the depth
+			var depth = 0;
+
+			function fix() {
+
+				if (count > 0) {
+
+					// Get last child node of $elm [the current element being fixed]
+					var $last_node = this.contents().last();
+
+					
+
+				}
+
+			}
+
+			this.call($elm);
+
+		}
+
+		// Apply the fix to each selected element and return the collection
+		return this.each(fixOrphans);
+
+	}
+
+
+})(jQuery);
+
+/*
+
+(function($){
+
+
+	$.fn.saveTheOrphans = function(_options) {
+
+		// Defaults
+		var options = {  
+			limit: 1
+		};
+
+		// Set Options
+		$.extend(options,_options);
+
 
 		// Function to be applied to all selected elements
 		function fixOrphans() {
@@ -26,6 +84,9 @@
 
 			// Set the count variable for this element
 			var count = options.limit;
+
+			// Set a variable to record the depth
+			var depth = 0;
 
 			// Recursive function to apply the fix
 			function fix() {
@@ -131,3 +192,4 @@
 
 
 })(jQuery);
+*/
